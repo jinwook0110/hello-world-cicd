@@ -1,0 +1,14 @@
+name: "Hello World"
+
+on:
+  push:
+    paths:
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+jobs:
+  sample:
+    name: Hello World Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World !"
