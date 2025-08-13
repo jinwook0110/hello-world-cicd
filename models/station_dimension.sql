@@ -5,7 +5,8 @@ WITH BIKE AS (
         start_station_name AS station_name,
         start_lat AS station_lat,
         start_lng AS station_lng
-    FROM {{ source('demo', 'bike') }}
+    --FROM {{ source('demo', 'bike') }}
+    FROM {{ ref('stg_bike') }}
     WHERE RIDE_ID != '"bikeid"'
     LIMIT 10
 )

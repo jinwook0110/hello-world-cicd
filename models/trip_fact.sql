@@ -9,7 +9,8 @@ END_STATION_ID,
 MEMBER_CASUAL AS MEMBER_CASUAL,
 TIMESTAMPDIFF(SECOND,TO_TIMESTAMP(STARTED_AT),TO_TIMESTAMP(ENDED_AT)) AS TRIP_DURATION_SECONDS
 
-FROM {{ source('demo', 'bike') }}
+--FROM {{ source('demo', 'bike') }}
+FROM {{ ref('stg_bike') }}
 
 where RIDE_ID != '"bikeid"' and RIDE_ID != 'bikeid'
 
