@@ -36,11 +36,9 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
-    # Applies to all files under models/example/
     example:
       +materialized: view
-
-  jaffle_shop:
+      +database: demo           # Snowflakeのmartデータベースに保存
     mart:
       +materialized: table      # テーブルとして保存
       +database: mart           # Snowflakeのmartデータベースに保存
